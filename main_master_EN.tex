@@ -1,0 +1,262 @@
+% --- Academic CV (EN) - Hamza Sabek ---
+% Template: LaTeX CV Template - S. Venkatraman (adapted)
+% Compile with: pdflatex main_master_EN.tex
+
+\documentclass[a4paper, 11pt]{article}
+
+% --- Packages ---
+\usepackage[T1]{fontenc}   % extractable text for ATS parsers
+\usepackage[english]{babel}
+\usepackage{hyperref, enumitem, longtable, amsmath, array}
+\usepackage{fontawesome5}
+\usepackage[left=0.7in, right=0.7in, bottom=.6in, top=0.6in, headsep=0in, footskip=.2in]{geometry}
+\renewcommand{\baselinestretch}{1}
+
+\usepackage[dvipsnames]{xcolor}
+\hypersetup{colorlinks=true, linkcolor=MidnightBlue, urlcolor=Gray,
+  pdftitle={CV - Hamza Sabek}, pdfauthor={Hamza Sabek}, pdfdisplaydoctitle=true}
+
+\usepackage{libertine}
+\usepackage[libertine]{newtxmath}
+
+\pagenumbering{gobble}
+\newcommand{\headingfont}{\Large\color{PineGreen}}
+\newcommand{\metric}[1]{{\small\color{darkgray}(#1)}}
+
+% One bullet per table row, so long entries can break across pages.
+\newcommand{\bul}[1]{\hangindent=1.1em\hangafter=1\makebox[1.1em][l]{--}#1}
+
+% --- Sections: two-column table (dates left, content right) ---
+\newcolumntype{R}{>{\raggedleft}p{1.2in}}
+\setlength{\LTpre}{4pt}
+\setlength{\LTpost}{0pt}
+\newenvironment{SectionTable}[1]{
+	\renewcommand*{\arraystretch}{1.1}
+	\setlength{\tabcolsep}{8pt}
+	\begin{longtable}{Rp{5.15in}} & #1 \\*}
+{\end{longtable}\vspace{2pt}}
+
+\begin{document}
+
+% --- Header ---
+\begin{SectionTable}{\Huge Hamza Sabek}
+	& \textbf{Ph.D. in Human Movement Science -- Cognitive psychology and neuroscience of action}\newline
+	Qualified for Associate Professor positions in France (CNU sections 74, 69 and 16)\newline
+	\href{mailto:hamza.sabek.campus@gmail.com}{hamza.sabek.campus@gmail.com} $\;\boldsymbol{\cdot}\;$
+	\href{tel:+33612236964}{+33~6~12~23~69~64} $\;\boldsymbol{\cdot}\;$ Paris, France\newline
+	\href{https://www.researchgate.net/profile/Hamza-Sabek}{ResearchGate} $\;\boldsymbol{\cdot}\;$
+	\href{https://www.linkedin.com/in/hamza-sabek-19819470/}{LinkedIn} $\;\boldsymbol{\cdot}\;$
+	\href{https://github.com/hamzasabek}{GitHub} \\
+\end{SectionTable}
+
+% --- Research profile ---
+\begin{SectionTable}{\headingfont Research Profile}
+	& I study how the body is represented in action: how the sensory consequences of a movement (visual, tactile, proprioceptive) are weighted and integrated into the representation of action and the body schema. My work combines psychophysics, motion analysis, electrophysiology and Bayesian modelling (causal inference), and I build the real-time experimental apparatus my protocols require. A psychomotor therapist by initial training, I also have hands-on experience of clinical research in neuromodulation. \\
+\end{SectionTable}
+
+% --- Education ---
+\begin{SectionTable}{\headingfont Education}
+	2025 &
+	\textbf{Ph.D. in Human Movement Science (STAPS)} -- Paris Nanterre University, Doctoral School 566 (Sport, Motor Skills and Human Movement Sciences). Defended December 2025.\newline
+	\textit{Title:} Representation of the body in motion: Towards an intentional and integrative approach to body-related perceptual effects\newline
+	\textit{Laboratory:} Laboratory of Interactions Cognition, Action, Emotion (LICAE) -- \textit{Supervisor:} Dr Loïc Heurley\newline
+	\textit{Committee:} R. Thouvarecq (reviewer), F. Waszak (reviewer), E. Pacherie, V. Dru, M. Guerraz, Y. Rossetti (chair) \\
+
+	2020 &
+	\textbf{M.Sc. in Psychology and Neuroscience of Movement: Exercise, Performance and Health}\newline
+	Paris Nanterre University\newline
+	\textit{Thesis:} Impact of inverted visual feedback of hand movements on body schema construction: a stimulus--response compatibility paradigm (supervisor: L. Heurley) \\
+
+	2017 &
+	\textbf{B.Sc. in Psychomotricity}\newline
+	Higher Institute of Nursing Professions and Health Techniques (ISPITS), Rabat, Morocco\newline
+	\textit{Capstone project:} Early psychomotor stimulation: a case study of a newborn with hydrocephalus (supervisor: Pr M. Kabiri) \\
+\end{SectionTable}
+
+% --- Experience ---
+\begin{SectionTable}{\headingfont Experience}
+	2026 -- present &
+	\textbf{Associate Researcher} -- LICAE, Faculty of Sport Sciences (UFR STAPS), Paris Nanterre University \href{https://licae.parisnanterre.fr/}{\faGlobe} \\
+	& \bul{Finalising the publications from my doctoral work.} \\
+	& \bul{Developing a Bayesian causal-inference pipeline for multisensory integration (postdoctoral project with Prof. H. Ehrsson, see \textit{Projects}).} \\
+	& \bul{Ran a workshop for Ph.D. students on instrumenting experiments with microcontrollers (Arduino, Teensy), March 2026.} \\
+
+	2024 -- 2025 &
+	\textbf{Clinical Research Engineer} -- Institute of Neuromodulation (INM), GHU Paris Psychiatry \& Neurosciences \href{https://www.ghu-paris.fr/fr/linstitut-de-neuromodulation}{\faGlobe} \\
+	& \bul{Coordinated neuropsychiatry trials (treatment-resistant depression, bipolar disorder): vagus nerve stimulation (VNS) and fMRI-based computational prediction of treatment response using motivation, effort and mood tasks.} \\
+	& \bul{Participant screening and consent; visit management from inclusion to end of follow-up; supervision of behavioural, fMRI (CENIR, ICM) and electrophysiology sessions.} \\
+	& \bul{Task programming and quality control (MATLAB, Python); data management in REDCap (eCRF, anonymisation); ICH-GCP compliance and SOP documentation.} \\
+
+	2021 -- 2023 &
+	\textbf{Temporary Teaching and Research Fellow (ATER)} -- LICAE, Faculty of Sport Sciences, Paris Nanterre University \\
+	& \bul{Doctoral research: intentional weighting vs.\ spatiotemporal correlations in the integration of body-related feedback; built a custom multisensory apparatus to induce controlled sensory conflicts.} \\
+
+	2020 -- 2021 &
+	\textbf{Psychomotor Therapist} -- Maison Valentine, medical residential care facility (ADAPEI 91), Essonne, France \href{https://adapei91.fr/maison-valentine/}{\faGlobe} \\
+	& \bul{Adults and older adults (multiple disabilities, Alzheimer's and Parkinson's disease, paraplegia and hemiplegia): motor and cognitive assessments, personalised plans aimed at maintaining autonomy.} \\
+	& \bul{Fall-prevention and functional strengthening workshops; multidisciplinary work on rehabilitation protocols.} \\
+
+	2017 -- 2018 &
+	\textbf{Psychomotor Therapist} -- Yasmine Breton Centre, Rabat, Morocco \href{https://centreyasminebreton.ma/}{\faGlobe} \\
+	& \bul{Children and adolescents (ASD, ADHD, coordination disorders): gross and fine motor rehabilitation, sensory integration, motor planning.} \\
+\end{SectionTable}
+
+% --- Projects ---
+\begin{SectionTable}{\headingfont Projects}
+	Research &
+	\textbf{ACT-BCI -- Perceptual and motor components of body representation through Bayesian causal inference}\newline
+	Postdoctoral project designed with Prof. Henrik Ehrsson (Brain, Body \& Self Laboratory, Karolinska Institutet, Stockholm). It asks whether perception and action rely on the same Bayesian causal inference when the rubber hand illusion creates a multisensory conflict, using custom robotic set-ups and computational modelling. Submitted to the Fyssen Foundation in 2026 and not funded; the project is ongoing at LICAE without dedicated funding. \\
+
+	Teaching &
+	\textbf{StatsCool -- Statistics for psychology and neuroscience, learned by playing} \href{https://hamzasabek.github.io/statscool/}{\faGlobe}\newline
+	A free, open-source, bilingual (English, French) website. Learners run classic psychology and neuroscience experiments in the browser (Müller-Lyer and Ebbinghaus illusions, reaction time, an inner clock, a neuron's spikes) and their own responses draw the graph. Six topics are live, from the mean and median to the binomial and exponential distributions. \\*
+	& \bul{Teaching design grounded in learning science: every topic runs four steps, each built on a mechanism with replicated effects (Discover: guided discovery with self-generated data; Explore: simulations and worked examples; Train your eye: perceptual learning with mastery and adaptive spacing; Check yourself: retrieval practice with explanatory feedback). The rationale rests on a literature review whose references and effect sizes were checked against their sources.} \\
+	& \bul{Design and development: React, D3 and Motion, built with Vite and deployed automatically to GitHub Pages (GitHub Actions); runs entirely in the browser, with no account and no server. Code under MIT, content under CC BY 4.0.} \\
+	& \bul{Next steps: complete the content beyond the six current topics, towards a full course from the mean to Bayesian multilevel models; test the site with real learners; add a backend so that learners can create an account, save their progress and follow their learning; an application for EU funding for open-source projects is in preparation.} \\
+	& \href{https://hamzasabek.github.io/statscool/}{hamzasabek.github.io/statscool} \\
+\end{SectionTable}
+
+% --- Publications ---
+\begin{SectionTable}{\headingfont Publications}
+	Peer-reviewed &
+	\textbf{Sabek, H.}, Heurley, L. P., Brunel, L., Vanborren, H., Brouillet, T., \& Dru, V. (2025).
+	Visuotactile correlation increases the integration of visual body-related effects into action representation.
+	\textit{Journal of Experimental Psychology: Human Perception and Performance}, \textit{51}(4), 445--456.
+	\href{https://doi.org/10.1037/xhp0001285}{doi:10.1037/xhp0001285}
+	\metric{IF 2024: 2.3; Q1 Experimental and Cognitive Psychology}\\
+
+	&
+	\textbf{Sabek, H.}, Heurley, L. P., Guerineau, R., \& Dru, V. (2024).
+	The Simon effect under reversed visual feedback.
+	\textit{Psychological Research}.
+	\href{https://doi.org/10.1007/s00426-024-01936-x}{doi:10.1007/s00426-024-01936-x}
+	\metric{IF 2023: 2.2; Q2 Experimental and Cognitive Psychology}\\
+
+	&
+	Heurley, L. P., Guerineau, R., \& \textbf{Sabek, H.} (2023).
+	Beyond grasping: Syllables processing influences manual keypress.
+	\textit{Psychonomic Bulletin \& Review}, \textit{30}(6), 2203--2209.
+	\href{https://doi.org/10.3758/s13423-023-02307-0}{doi:10.3758/s13423-023-02307-0}
+	\metric{IF 2021: 4.41; Q1 Experimental and Cognitive Psychology}\\
+
+	&
+	Guerineau, R., Heurley, L., \textbf{Sabek, H.}, Brouillet, D., \& Dru, V. (2023).
+	The verbal instruction in favour of action effects can influence the congruity effect of grasping behaviours.
+	\textit{Current Psychology}.
+	\href{https://doi.org/10.1007/s12144-023-04995-2}{doi:10.1007/s12144-023-04995-2}
+	\metric{IF 2022: 2.8; Q2 Psychology}\\
+\end{SectionTable}
+
+% --- Talks ---
+\begin{SectionTable}{\headingfont Talks and Presentations\footnote{Oral presentations unless stated otherwise. Titles of talks given in French are translated.}}
+	Invited talk &
+	Sabek, H. (4 June 2025). Body-related action effects integration and representing body in action.
+	\textit{Brain, Body \& Self Laboratory (Ehrsson Lab), Karolinska Institutet}, Stockholm, Sweden. \href{https://www.ehrssonlab.se/}{\faGlobe} \\
+
+	Seminars &
+	Sabek, H. (13 May 2025). Integration of body-related action effects in action representation.
+	\textit{Seminar during Luigi Tamé's visit to LICAE}, Paris Nanterre University. \\
+
+	&
+	Sabek, H. (16 May 2024). Visuotactile correlation increases the integration of visual feedback into action representation.
+	\textit{LICAE Seminars}, Paris Nanterre University. \href{https://licae.parisnanterre.fr/actualites/seminaires}{\faGlobe} \\
+
+	&
+	Sabek, H. (10 February 2022). Multisensory integration in body schema construction and action planning.
+	\textit{LICAE Seminars}, Paris Nanterre University. \\
+
+	Workshops &
+	Sabek, H., Heurley, L. P., Vanborren, H., Brouillet, T., Dru, V., \& Brunel, L. (2--3 July 2025). Visuotactile correlation and the integration of body-related effects into action representation.
+	\textit{3rd Human Embodied Cognition Workshop (HECO)}, Montpellier, France. \href{https://heco2025.sciencesconf.org/}{\faGlobe} \\
+
+	&
+	Sabek, H., Heurley, L. P., \& Dru, V. (24--25 June 2022). The Simon effect under reversed visual feedback.
+	\textit{7th International Workshop in Cognitive Sciences (TRACE)}, Würzburg, Germany. \\
+
+	Conferences &
+	Sabek, H., Heurley, L. P., \& Dru, V. (31 October -- 2 November 2023). Visuotactile correlation increases the integration of visual feedback into action representation. \textit{20th Congress of the Association of Researchers in Physical Activity and Sport (ACAPS)}, Reims, France. \href{http://acaps2023.univ-reims.fr/programme/}{\faGlobe}\\
+
+	&
+	Sabek, H., Heurley, L. P., \& Dru, V. (August 2022). The Simon effect under reversed visual feedback.
+	\textit{22nd Meeting of the European Society for Cognitive Psychology (ESCOP)}, Lille, France. \href{https://www.escop.eu/events/22nd-escop-conference}{\faGlobe} \\
+
+	&
+	Sabek, H., Heurley, L. P., \& Dru, V. (8--10 December 2021). Action--effect learning under reversed visual feedback.
+	\textit{61st Congress of the French Psychological Society (SFP)}, Tours, France. \\
+
+	&
+	Sabek, H. (27--29 October 2021). Reversed visual feedback and body schema construction.
+	\textit{19th ACAPS Congress}, Montpellier, France (poster). \href{https://acaps2021.sciencesconf.org/}{\faGlobe}\\
+
+	Outreach &
+	Sabek, H. (13 November 2023). Reversed visual feedback and body representation in action.
+	\textit{My Thesis in 180 Seconds} (outside the national competition), Doctoral School 566, Université Paris Cité. \\
+\end{SectionTable}
+
+% --- Teaching ---
+\begin{SectionTable}{\headingfont Teaching -- 413 hours\footnote{Hours in French tutorial-equivalent (HETD). Course handbook of the Bachelor's in Sport Sciences: \href{https://ufr-staps.parisnanterre.fr/offre-de-formation/licences-generales}{ufr-staps.parisnanterre.fr}.}}
+	128 h & \textbf{Social Psychology and Sport} (B.Sc.\ year 1, tutorials) -- \textit{Adjunct lecturer 2020--2021, ATER 2021--2023} \\
+	111 h & \textbf{Psychological and Educational Sciences of Sport} (year 1, tutorials) -- \textit{ATER 2021--2023} \\
+	54 h  & \textbf{Self-Knowledge and Career Orientation} (year 1, tutorials) -- \textit{ATER 2021--2023} \\
+	52 h  & \textbf{Cognitive and Motor Learning} (year 2, tutorials) -- \textit{ATER 2021--2023} \\
+	48 h  & \textbf{Academic Study Skills} (year 1, tutorials) -- \textit{Adjunct lecturer 2020--2021, ATER 2021--2023} \\
+	20 h  & \textbf{Biological and Psychological Approaches to Motor Performance} (year 2, tutorials) -- \textit{ATER 2022--2023} \\
+\end{SectionTable}
+
+% --- Service ---
+\begin{SectionTable}{\headingfont Academic Service}
+	Peer review &
+	Ad hoc reviewer for \textit{Psychonomic Bulletin \& Review} (2026), \textit{Cognition and Emotion} (2026), \textit{Scientific Reports} and \textit{Experimental Brain Research}. \\
+
+	Organisation &
+	\textbf{Ph.D. workshop: microcontrollers (Arduino, Teensy) for instrumenting psychophysics experiments} -- LICAE, 10 March 2026. \\
+	&
+	\textbf{LICAE Study Days} ``Cognition, Action, Prediction: the role of predictive processes in our cognitive, affective and motor capacities'' -- 24--25 June 2024. \href{https://licae.parisnanterre.fr/actualites/journees-detude-du-licae/2024-cognition-action-prediction}{\faGlobe} \\
+	&
+	\textbf{Science Festival (Fête de la Science)} ``Discovering research in psychology'' -- EPN-R Federation, 13 October 2023. \\
+
+	Representation & Ph.D. student representative to the EPN-R Federation (2022--2024). \\
+	Associations & Co-founder and vice-president of the Moroccan Dyslexia Association, Oujda (2017--2018). \\
+\end{SectionTable}
+
+% --- Training ---
+\begin{SectionTable}{\headingfont Additional Training}
+	2024 (12 h) & \textbf{Analysis of (electro-)physiological signals: theoretical and practical aspects} -- Paris Nanterre University (M. Beaurenaut, R. Mennella) \\
+	2023 (25.5 h) & \textbf{Open Brain School: neuroimaging and electrophysiology} -- Paris Brain Institute (ICM), CENIR platform (EEG/MEG, fMRI, intracranial recordings, stimulation methods) \\
+	2023 (24 h) & \textbf{Motion capture and analysis (Qualisys, inertial sensors, MATLAB)} -- Paris-Saclay University (I. Siegler) \\
+	2023 (25 h) & \textbf{Python for Data Science, AI \& Development} -- IBM, Coursera \\
+\end{SectionTable}
+
+% --- Skills ---
+\begin{SectionTable}{\headingfont Technical Skills}
+	Modelling \& statistics & Bayesian modelling (causal inference, parameter recovery, model selection), signal detection theory, time-series analysis, supervised and unsupervised machine learning (Python, R, MATLAB). \\
+	Electrophysiology & EEG (Biosemi, Brain Products), EMG, ECG (Biopac); time-frequency analysis, evoked potentials; trained in intraoperative neuromonitoring (Inomed: SSEP, MEP, VEP, ECoG, LFP, nerve conduction); model-based fMRI. \\
+	Motion \& eye tracking & Qualisys, Vicon, Xsens, inertial sensors, force sensors; eye tracking and pupillometry (Tobii Pro Nano). \\
+	Instrumentation & Robotic devices with real-time data integration (IMUs, force sensors), haptic feedback, visuotactile stimulators, microcontrollers (Arduino, Teensy). \\
+	Programming & Python (PsychoPy, Pygame), MATLAB (Psychtoolbox), C/C++ (real-time paradigms), R, JavaScript (React, D3). \\
+	Clinical research & Multicentre trials, patient inclusion and follow-up, REDCap/eCRF, Good Clinical Practice (ICH-GCP). \\
+	Languages & Arabic (native), French (C2), English (C1). \\
+\end{SectionTable}
+
+% --- Internships ---
+\begin{SectionTable}{\headingfont Internships}
+	2025 & \textbf{Intraoperative neuromonitoring internship} -- Hôpital Fondation Adolphe de Rothschild, Paris (EMG, EEG, LFP, SSEP, VEP). \\
+	2019 -- 2020 & \textbf{Master's research internship} -- LICAE, Paris Nanterre University. \\
+	2014 -- 2017 & \textbf{Clinical psychomotricity internships (Morocco)} -- adult and child psychiatry, paediatrics, neurosurgery, specialised centres and school settings (Rabat, Oujda). \\
+\end{SectionTable}
+
+% --- References ---
+\enlargethispage{2\baselineskip}
+\begin{SectionTable}{\headingfont References}
+	Ph.D. supervisor &
+	\textbf{Dr Loïc Heurley} (Assoc.\ Prof., HDR) -- Paul-Valéry University Montpellier 3 -- \href{mailto:heurleyloic@yahoo.fr}{heurleyloic@yahoo.fr} \\
+	Thesis committee &
+	\textbf{Prof. Vincent Dru} -- Paris Nanterre University -- \href{mailto:vincent.dru@parisnanterre.fr}{vincent.dru@parisnanterre.fr} \\
+	Jury chair &
+	\textbf{Prof. Yves Rossetti} (PU-PH) -- Lyon Neuroscience Research Center (CRNL, Inserm) -- \href{mailto:yves.rossetti@inserm.fr}{yves.rossetti@inserm.fr} \\
+\end{SectionTable}
+
+\vfill
+\hfill {\small\color{darkgray} Last updated \today}
+
+\end{document}

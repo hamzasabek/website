@@ -1,0 +1,263 @@
+% --- CV académique (FR) - Hamza Sabek ---
+% Gabarit : LaTeX CV Template - S. Venkatraman (adapté)
+% Compiler avec : lualatex main_master_FR.tex
+
+\documentclass[a4paper, 11pt]{article}
+
+% --- Packages ---
+\usepackage[T1]{fontenc}   % accents extractibles (ATS) et guillemets « » corrects
+\usepackage[french]{babel}
+\usepackage{hyperref, enumitem, longtable, amsmath, array}
+\usepackage{fontawesome5}
+\usepackage[left=0.7in, right=0.7in, bottom=.6in, top=0.6in, headsep=0in, footskip=.2in]{geometry}
+\renewcommand{\baselinestretch}{1}
+
+\usepackage[dvipsnames]{xcolor}
+\hypersetup{colorlinks=true, linkcolor=MidnightBlue, urlcolor=Gray,
+  pdftitle={CV - Hamza Sabek}, pdfauthor={Hamza Sabek}, pdfdisplaydoctitle=true}
+
+\usepackage{libertine}
+\usepackage[libertine]{newtxmath}
+
+\pagenumbering{gobble}
+\newcommand{\headingfont}{\Large\color{PineGreen}}
+\newcommand{\metric}[1]{{\small\color{darkgray}(#1)}}
+
+% Puce en ligne de tableau : une puce = une ligne, pour que les longues
+% expériences puissent se couper entre deux pages.
+\newcommand{\bul}[1]{\hangindent=1.1em\hangafter=1\makebox[1.1em][l]{--}#1}
+
+% --- Sections : tableau à deux colonnes (dates à gauche, contenu à droite) ---
+\newcolumntype{R}{>{\raggedleft}p{1.2in}}
+\setlength{\LTpre}{4pt}
+\setlength{\LTpost}{0pt}
+\newenvironment{SectionTable}[1]{
+	\renewcommand*{\arraystretch}{1.1}
+	\setlength{\tabcolsep}{8pt}
+	\begin{longtable}{Rp{5.15in}} & #1 \\*}
+{\end{longtable}\vspace{2pt}}
+
+\begin{document}
+
+% --- En-tête ---
+\begin{SectionTable}{\Huge Hamza Sabek}
+	& \textbf{Docteur en STAPS -- Psychologie cognitive et neurosciences de l'action}\newline
+	Qualifié aux fonctions de maître de conférences (CNU 74, 69 et 16)\newline
+	\href{mailto:hamza.sabek.campus@gmail.com}{hamza.sabek.campus@gmail.com} $\;\boldsymbol{\cdot}\;$
+	\href{tel:+33612236964}{+33~6~12~23~69~64} $\;\boldsymbol{\cdot}\;$ Paris, France\newline
+	\href{https://www.researchgate.net/profile/Hamza-Sabek}{ResearchGate} $\;\boldsymbol{\cdot}\;$
+	\href{https://www.linkedin.com/in/hamza-sabek-19819470/}{LinkedIn} $\;\boldsymbol{\cdot}\;$
+	\href{https://github.com/hamzasabek}{GitHub} \\
+\end{SectionTable}
+
+% --- Profil de recherche ---
+\begin{SectionTable}{\headingfont Profil de recherche}
+	& Mes travaux portent sur la représentation du corps en action : comment les conséquences sensorielles d'un mouvement (visuelles, tactiles, proprioceptives) sont pondérées et intégrées dans la représentation de l'action et du schéma corporel. J'articule psychophysique, analyse du mouvement, électrophysiologie et modélisation bayésienne (inférence causale), et je conçois moi-même les dispositifs expérimentaux temps réel qu'exigent mes protocoles. Psychomotricien de formation initiale, j'ai aussi une expérience de la recherche clinique en neuromodulation. \\
+\end{SectionTable}
+
+% --- Diplômes ---
+\begin{SectionTable}{\headingfont Diplômes}
+	2025 &
+	\textbf{Doctorat en STAPS} -- Université Paris Nanterre, École doctorale 566 (Sciences du sport, de la motricité et du mouvement humain). Soutenu en décembre 2025.\newline
+	\textit{Titre :} Représentation du corps en mouvement. Vers une approche intentionnelle et intégrative des effets perceptifs liés au corps\newline
+	\textit{Laboratoire :} Laboratoire sur les Interactions Cognition, Action, Émotion (LICAE) -- \textit{Directeur :} Dr Loïc Heurley\newline
+	\textit{Jury :} R. Thouvarecq (rapporteur), F. Waszak (rapporteur), E. Pacherie, V. Dru, M. Guerraz, Y. Rossetti (président) \\
+
+	2020 &
+	\textbf{Master STAPS -- Psychologie et neurosciences du mouvement : exercice, performance et santé}\newline
+	Université Paris Nanterre\newline
+	\textit{Mémoire :} L'impact d'une inversion des retours visuels du mouvement des mains sur la construction du schéma corporel : un paradigme de compatibilité stimulus--réponse (dir. L. Heurley) \\
+
+	2017 &
+	\textbf{Licence en psychomotricité}\newline
+	Institut Supérieur des Professions Infirmières et Techniques de Santé (ISPITS), Rabat, Maroc\newline
+	\textit{Projet de fin d'études :} Stimulation psychomotrice précoce : étude de cas d'un nouveau-né atteint d'hydrocéphalie (dir. Pr M. Kabiri) \\
+\end{SectionTable}
+
+% --- Expérience ---
+\begin{SectionTable}{\headingfont Expérience}
+	2026 -- à ce jour &
+	\textbf{Chercheur associé} -- LICAE, UFR STAPS, Université Paris Nanterre \href{https://licae.parisnanterre.fr/}{\faGlobe} \\
+	& \bul{Finalisation des publications issues de la thèse.} \\
+	& \bul{Développement d'un pipeline d'inférence causale bayésienne appliqué à l'intégration multisensorielle (projet postdoctoral avec le Pr H. Ehrsson, voir \textit{Projets}).} \\
+	& \bul{Animation d'un atelier doctorants sur l'instrumentation d'expériences par microcontrôleurs (Arduino, Teensy), mars 2026.} \\
+
+	2024 -- 2025 &
+	\textbf{Ingénieur d'études cliniques} -- Institut de Neuromodulation (INM), GHU Paris Psychiatrie \& Neurosciences \href{https://www.ghu-paris.fr/fr/linstitut-de-neuromodulation}{\faGlobe} \\
+	& \bul{Coordination d'essais en neuropsychiatrie (dépression résistante, trouble bipolaire) : stimulation du nerf vague (VNS) et prédiction computationnelle de la réponse au traitement par IRMf (tâches de motivation, d'effort et d'humeur).} \\
+	& \bul{Pré-sélection et consentement des participants, gestion des visites de l'inclusion à la fin du suivi ; supervision des sessions comportementales, IRMf (CENIR, ICM) et électrophysiologiques.} \\
+	& \bul{Programmation et contrôle qualité des tâches (MATLAB, Python) ; data management sous REDCap (eCRF, anonymisation) ; respect des BPC (ICH-GCP) et documentation des procédures.} \\
+
+	2021 -- 2023 &
+	\textbf{Attaché temporaire d'enseignement et de recherche (ATER)} -- LICAE, UFR STAPS, Université Paris Nanterre \\
+	& \bul{Recherche doctorale : pondération intentionnelle et corrélations spatio-temporelles dans l'intégration des retours liés au corps ; conception d'un dispositif multisensoriel sur mesure pour induire des conflits sensoriels contrôlés.} \\
+
+	2020 -- 2021 &
+	\textbf{Psychomotricien} -- Maison Valentine, Foyer d'accueil médicalisé (ADAPEI 91), Essonne \href{https://adapei91.fr/maison-valentine/}{\faGlobe} \\
+	& \bul{Adultes et seniors (polyhandicap, maladies d'Alzheimer et de Parkinson, paraplégie et hémiplégie) : bilans moteurs et cognitifs, projets personnalisés centrés sur le maintien de l'autonomie.} \\
+	& \bul{Ateliers de prévention des chutes et de renforcement fonctionnel ; collaboration pluriprofessionnelle sur les protocoles de réhabilitation.} \\
+
+	2017 -- 2018 &
+	\textbf{Psychomotricien} -- Centre Yasmine Breton, Rabat, Maroc \href{https://centreyasminebreton.ma/}{\faGlobe} \\
+	& \bul{Enfants et adolescents (TSA, TDAH, troubles de la coordination) : rééducation de la motricité globale et fine, intégration sensorielle, planification motrice.} \\
+\end{SectionTable}
+
+% --- Projets ---
+\begin{SectionTable}{\headingfont Projets}
+	Recherche &
+	\textbf{ACT-BCI -- Composantes perceptives et motrices de la représentation du corps par inférence causale bayésienne}\newline
+	Projet postdoctoral conçu avec le Pr Henrik Ehrsson (Brain, Body \& Self Laboratory, Karolinska Institutet, Stockholm). Il examine si la perception et l'action reposent sur la même inférence causale bayésienne lorsque l'illusion de la main en caoutchouc crée un conflit multisensoriel, à l'aide de dispositifs robotisés sur mesure et d'une modélisation computationnelle. Soumis à la Fondation Fyssen en 2026 et non financé ; le projet se poursuit au LICAE sans financement dédié. \\
+
+	Pédagogie &
+	\textbf{StatsCool -- les statistiques pour la psychologie et les neurosciences, apprises en jouant} \href{https://hamzasabek.github.io/statscool/}{\faGlobe}\newline
+	Site web libre, gratuit et bilingue (français, anglais). L'apprenant réalise dans son navigateur des expériences classiques de psychologie et de neurosciences (illusions de Müller-Lyer et d'Ebbinghaus, temps de réaction, horloge interne, décharges d'un neurone) et ses propres réponses dessinent le graphique. Six thèmes en ligne, de la moyenne et de la médiane aux lois binomiale et exponentielle. \\*
+	& \bul{Conception pédagogique fondée sur les sciences de l'apprentissage : chaque thème suit quatre étapes, chacune appuyée sur un mécanisme aux effets répliqués (Découvrir : découverte guidée à partir de ses propres données ; Explorer : simulations et exemples résolus ; Entraîner son œil : apprentissage perceptif avec critère de maîtrise et espacement adaptatif ; Se tester : pratique de récupération avec rétroaction explicative). Cette démarche s'appuie sur une revue de littérature dont les références et les tailles d'effet ont été vérifiées à la source.} \\
+	& \bul{Conception et développement : React, D3 et Motion, construit avec Vite et déployé automatiquement sur GitHub Pages (GitHub Actions) ; fonctionne entièrement dans le navigateur, sans compte ni serveur. Code sous licence MIT, contenu sous CC BY 4.0.} \\
+	& \bul{Perspectives : compléter le contenu au-delà des six thèmes actuels, vers un cours complet de la moyenne aux modèles bayésiens multiniveaux ; tester le site auprès d'apprenants réels ; ajouter un serveur (backend) permettant aux apprenants de créer un compte, de sauvegarder leur progression et de suivre leur apprentissage ; une demande de financement européen pour les projets open source est en préparation.} \\
+	& \href{https://hamzasabek.github.io/statscool/}{hamzasabek.github.io/statscool} \\
+\end{SectionTable}
+
+% --- Publications ---
+\begin{SectionTable}{\headingfont Publications}
+	Articles &
+	\textbf{Sabek, H.}, Heurley, L. P., Brunel, L., Vanborren, H., Brouillet, T., \& Dru, V. (2025).
+	Visuotactile correlation increases the integration of visual body-related effects into action representation.
+	\textit{Journal of Experimental Psychology: Human Perception and Performance}, \textit{51}(4), 445--456.
+	\href{https://doi.org/10.1037/xhp0001285}{doi:10.1037/xhp0001285}
+	\metric{IF 2024 : 2,3 ; Q1 Psychologie expérimentale et cognitive}\\
+
+	&
+	\textbf{Sabek, H.}, Heurley, L. P., Guerineau, R., \& Dru, V. (2024).
+	The Simon effect under reversed visual feedback.
+	\textit{Psychological Research}.
+	\href{https://doi.org/10.1007/s00426-024-01936-x}{doi:10.1007/s00426-024-01936-x}
+	\metric{IF 2023 : 2,2 ; Q2 Psychologie expérimentale et cognitive}\\
+
+	&
+	Heurley, L. P., Guerineau, R., \& \textbf{Sabek, H.} (2023).
+	Beyond grasping: Syllables processing influences manual keypress.
+	\textit{Psychonomic Bulletin \& Review}, \textit{30}(6), 2203--2209.
+	\href{https://doi.org/10.3758/s13423-023-02307-0}{doi:10.3758/s13423-023-02307-0}
+	\metric{IF 2021 : 4,41 ; Q1 Psychologie expérimentale et cognitive}\\
+
+	&
+	Guerineau, R., Heurley, L., \textbf{Sabek, H.}, Brouillet, D., \& Dru, V. (2023).
+	The verbal instruction in favour of action effects can influence the congruity effect of grasping behaviours.
+	\textit{Current Psychology}.
+	\href{https://doi.org/10.1007/s12144-023-04995-2}{doi:10.1007/s12144-023-04995-2}
+	\metric{IF 2022 : 2,8 ; Q2 Psychologie}\\
+\end{SectionTable}
+
+% --- Communications ---
+\begin{SectionTable}{\headingfont Communications\footnote{Communications orales sauf mention contraire. Les titres des communications données en anglais sont laissés en anglais.}}
+	Invitation &
+	Sabek, H. (4 juin 2025). Body-related action effects integration and representing body in action.
+	\textit{Brain, Body \& Self Laboratory (Ehrsson Lab), Karolinska Institutet}, Stockholm, Suède. \href{https://www.ehrssonlab.se/}{\faGlobe} \\
+
+	Séminaires &
+	Sabek, H. (13 mai 2025). Integration of body-related action effects in action representation.
+	\textit{Séminaire à l'occasion de la visite de Luigi Tamé au LICAE}, Université Paris Nanterre. \\
+
+	&
+	Sabek, H. (16 mai 2024). La corrélation visuotactile augmente l'intégration des retours visuels dans la représentation de l'action.
+	\textit{Séminaires du LICAE}, Université Paris Nanterre. \href{https://licae.parisnanterre.fr/actualites/seminaires}{\faGlobe} \\
+
+	&
+	Sabek, H. (10 février 2022). L'intégration multisensorielle dans la construction du schéma corporel et dans la planification de l'action.
+	\textit{Séminaires du LICAE}, Université Paris Nanterre. \\
+
+	Workshops &
+	Sabek, H., Heurley, L. P., Vanborren, H., Brouillet, T., Dru, V., \& Brunel, L. (2--3 juillet 2025). Corrélation visuotactile et intégration des effets liés au corps dans la représentation de l'action.
+	\textit{3rd Human Embodied Cognition Workshop (HECO)}, Montpellier. \href{https://heco2025.sciencesconf.org/}{\faGlobe} \\
+
+	&
+	Sabek, H., Heurley, L. P., \& Dru, V. (24--25 juin 2022). The Simon effect under reversed visual feedback.
+	\textit{7th International Workshop in Cognitive Sciences (TRACE)}, Würzburg, Allemagne. \\
+
+	Congrès &
+	Sabek, H., Heurley, L. P., \& Dru, V. (31 octobre -- 2 novembre 2023). La corrélation visuotactile augmente l'intégration des retours visuels dans la représentation de l'action. \textit{20\textsuperscript{e} congrès de l'Association des Chercheurs en Activités Physiques et Sportives (ACAPS)}, Reims. \href{http://acaps2023.univ-reims.fr/programme/}{\faGlobe}\\
+
+	&
+	Sabek, H., Heurley, L. P., \& Dru, V. (août 2022). The Simon effect under reversed visual feedback.
+	\textit{22nd Meeting of the European Society for Cognitive Psychology (ESCOP)}, Lille. \href{https://www.escop.eu/events/22nd-escop-conference}{\faGlobe} \\
+
+	&
+	Sabek, H., Heurley, L. P., \& Dru, V. (8--10 décembre 2021). Apprentissage action--effet sous retours visuels inversés.
+	\textit{61\textsuperscript{e} congrès de la Société Française de Psychologie (SFP)}, Tours. \\
+
+	&
+	Sabek, H. (27--29 octobre 2021). Retours visuels inversés et construction du schéma corporel.
+	\textit{19\textsuperscript{e} congrès de l'ACAPS}, Montpellier (poster). \href{https://acaps2021.sciencesconf.org/}{\faGlobe}\\
+
+	Médiation &
+	Sabek, H. (13 novembre 2023). Retours visuels inversés et représentation du corps en action.
+	\textit{Ma thèse en 180 secondes} (hors compétition nationale), ED 566, Université Paris Cité. \\
+\end{SectionTable}
+
+% --- Enseignements ---
+\begin{SectionTable}{\headingfont Enseignements -- 413 h éq. TD\footnote{Livret des enseignements de Licence STAPS : \href{https://ufr-staps.parisnanterre.fr/offre-de-formation/licences-generales}{ufr-staps.parisnanterre.fr}.}}
+	128 h & \textbf{Psychologie sociale et APS} (L1 STAPS, TD) -- \textit{Vacataire 2020--2021, ATER 2021--2023} \\
+	111 h & \textbf{Sciences psychologiques et sciences de l'éducation des APS} (L1, TD) -- \textit{ATER 2021--2023} \\
+	54 h  & \textbf{Connaissance de soi et des métiers} (L1, TD) -- \textit{ATER 2021--2023} \\
+	52 h  & \textbf{Apprentissage cognitif et moteur} (L2, TD) -- \textit{ATER 2021--2023} \\
+	48 h  & \textbf{Méthodologie du travail universitaire} (L1, TD) -- \textit{Vacataire 2020--2021, ATER 2021--2023} \\
+	20 h  & \textbf{Approche biologique et psychologique de la performance motrice} (L2, TD) -- \textit{ATER 2022--2023} \\
+\end{SectionTable}
+
+% --- Engagement collectif ---
+\begin{SectionTable}{\headingfont Engagement collectif}
+	Relecture &
+	Relecteur \textit{ad hoc} pour \textit{Psychonomic Bulletin \& Review} (2026), \textit{Cognition and Emotion} (2026), \textit{Scientific Reports} et \textit{Experimental Brain Research}. \\
+
+	Organisation &
+	\textbf{Atelier doctorants : microcontrôleurs (Arduino, Teensy) pour l'instrumentation d'expériences psychophysiques} -- LICAE, 10 mars 2026. \\
+	&
+	\textbf{\href{https://licae.parisnanterre.fr/actualites/journees-detude-du-licae/2024-cognition-action-prediction}{\color{black}Journées d'étude du LICAE}} « Cognition, action, prédiction : le rôle des processus prédictifs dans nos capacités cognitives, affectives et motrices » -- 24--25 juin 2024. \\
+	&
+	\textbf{Fête de la science} « La découverte de la recherche en psychologie » -- Fédération EPN-R, 13 octobre 2023. \\
+
+	Représentation & Représentant des doctorants auprès de la Fédération EPN-R (2022--2024). \\
+	Associatif & Co-fondateur et vice-président de l'Association marocaine de la dyslexie, Oujda (2017--2018). \\
+\end{SectionTable}
+
+% --- Formations ---
+\begin{SectionTable}{\headingfont Formations complémentaires}
+	2024 (12 h) & \textbf{Analyse de signaux (électro-)physiologiques : aspects théoriques et pragmatiques} -- Université Paris Nanterre (M. Beaurenaut, R. Mennella) \\
+	2023 (25,5 h) & \textbf{Open Brain School : neuroimagerie et électrophysiologie} -- Institut du Cerveau, plateforme CENIR (EEG/MEG, IRMf, enregistrements intracrâniens, méthodes de stimulation) \\
+	2023 (24 h) & \textbf{Capture et analyse du mouvement (Qualisys, centrales inertielles, MATLAB)} -- Université Paris-Saclay (I. Siegler) \\
+	2023 (25 h) & \textbf{Python for Data Science, AI \& Development} -- IBM, Coursera \\
+\end{SectionTable}
+
+% --- Compétences ---
+\begin{SectionTable}{\headingfont Compétences techniques}
+	Modélisation \& stats & Modélisation bayésienne (inférence causale, récupération de paramètres, sélection de modèles), théorie de détection du signal, analyse de séries temporelles, apprentissage automatique supervisé et non supervisé (Python, R, MATLAB). \\
+	Électrophysiologie & EEG (Biosemi, Brain Products), EMG, ECG (Biopac) ; analyse temps-fréquence, potentiels évoqués ; formation au neuromonitoring peropératoire (Inomed : PES, PEM, PEV, ECoG, LFP, conduction nerveuse) ; IRMf model-based. \\
+	Mouvement & Qualisys, Vicon, Xsens, centrales inertielles, capteurs de force ; oculométrie et pupillométrie (Tobii Pro Nano). \\
+	Instrumentation & Dispositifs robotisés et intégration temps réel (IMU, capteurs de force), retours haptiques, stimulateurs visuotactiles, microcontrôleurs (Arduino, Teensy). \\
+	Programmation & Python (PsychoPy, Pygame), MATLAB (Psychtoolbox), C/C++ (paradigmes temps réel), R, JavaScript (React, D3). \\
+	Recherche clinique & Essais multicentriques, inclusion et suivi des patients, REDCap/eCRF, BPC. \\
+	Langues & Arabe (langue maternelle), français (C2), anglais (C1). \\
+\end{SectionTable}
+
+% --- Stages ---
+\begin{SectionTable}{\headingfont Stages}
+	2025 & \textbf{Stage en neuromonitoring peropératoire} -- Hôpital Fondation Adolphe de Rothschild, Paris (EMG, EEG, LFP, PES, PEV). \\
+	2019 -- 2020 & \textbf{Stage de recherche de Master} -- LICAE, Université Paris Nanterre. \\
+	2014 -- 2017 & \textbf{Stages cliniques de psychomotricité (Maroc)} -- psychiatrie adulte et enfant, pédiatrie, neurochirurgie, centres spécialisés et milieu scolaire (Rabat, Oujda). \\
+\end{SectionTable}
+
+% --- Références ---
+\enlargethispage{2\baselineskip}
+\begin{SectionTable}{\headingfont Références}
+	Directeur de thèse &
+	\textbf{Dr Loïc Heurley} (MCF-HDR) -- Univ. Montpellier 3 -- \href{mailto:heurleyloic@yahoo.fr}{heurleyloic@yahoo.fr} \\
+	Comité de thèse &
+	\textbf{Pr Vincent Dru} -- UFR STAPS, Univ. Paris Nanterre -- \href{mailto:vincent.dru@parisnanterre.fr}{vincent.dru@parisnanterre.fr} \\
+	Président du jury &
+	\textbf{Pr Yves Rossetti} (PU-PH) -- CRNL, Inserm, Lyon -- \href{mailto:yves.rossetti@inserm.fr}{yves.rossetti@inserm.fr} \\
+\end{SectionTable}
+
+\vfill
+\hfill {\small\color{darkgray} Mis à jour le \today}
+
+\end{document}
