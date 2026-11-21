@@ -2,8 +2,10 @@ import React, { useMemo, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Tag, Tile } from '@carbon/react';
 import { Launch, Email } from '@carbon/icons-react';
-import { BlockMath } from 'react-katex';
-import RichLatexText from './RichLatexText';
+import RichLatexText, {
+  StructuredEntry,
+  StructuredBullet,
+} from './RichLatexText';
 import HeroSection from './HeroSection';
 
 function SectionHeader({ number, title, footnote }) {
@@ -68,46 +70,11 @@ export default function CvSections({
   }, [sections.teaching]);
 
   const allLabel = lang === 'fr' ? 'Toutes' : 'All';
-  const modelLabel =
-    lang === 'fr'
-      ? 'INFÉRENCE CAUSALE BAYÉSIENNE // INTÉGRATION MULTISENSORIELLE'
-      : 'BAYESIAN CAUSAL INFERENCE // MULTISENSORY INTEGRATION';
-  const modelCaption =
-    lang === 'fr'
-      ? 'Probabilité a posteriori d’une cause commune C = 1 à partir des signaux visuels et tactiles.'
-      : 'Posterior probability of a common cause C = 1 given visual and tactile sensory cues.';
 
   if (categoryId === 'profile') {
     return (
       <div className="cv-category-page">
         <HeroSection data={data} lang={lang} onOpenLatexModal={onOpenLatexModal} />
-        {sections.profile && (
-          <Container className="cv-container">
-            <section id="profile" className="cv-section cv-section-single">
-              <SectionHeader number="01" title={sections.profile.title} />
-              <Row className="g-4 align-items-stretch">
-                <Col lg={7}>
-                  <div className="cv-prose-lead">
-                    {sections.profile.entries.map((entry, idx) => (
-                      <p key={idx}>
-                        <RichLatexText tokens={entry.tokens} />
-                      </p>
-                    ))}
-                  </div>
-                </Col>
-                <Col lg={5}>
-                  <Tile className="cv-carbon-tile cv-equation-tile">
-                    <div className="etiquette cv-tile-eyebrow">{modelLabel}</div>
-                    <div className="cv-katex-wrap">
-                      <BlockMath math="P(C=1 \mid x_V, x_T) = \frac{P(x_V, x_T \mid C=1)\,P(C=1)}{P(x_V, x_T)}" />
-                    </div>
-                    <p className="cv-equation-caption">{modelCaption}</p>
-                  </Tile>
-                </Col>
-              </Row>
-            </section>
-          </Container>
-        )}
       </div>
     );
   }
@@ -145,14 +112,14 @@ export default function CvSections({
                     </div>
 
                     <div className="cv-entry-body">
-                      <RichLatexText tokens={entry.tokens} />
+                      <StructuredEntry tokens={entry.tokens} />
                     </div>
 
                     {entry.bullets.length > 0 && (
                       <ul className="cv-bullet-list">
                         {entry.bullets.map((bul, bIdx) => (
                           <li key={bIdx}>
-                            <RichLatexText tokens={bul} />
+                            <StructuredBullet tokens={bul} />
                           </li>
                         ))}
                       </ul>
@@ -207,13 +174,13 @@ export default function CvSections({
                   <div className="cv-col-label number">{entry.label}</div>
                   <div className="cv-col-content">
                     <div className="cv-entry-head">
-                      <RichLatexText tokens={entry.tokens} />
+                      <StructuredEntry tokens={entry.tokens} />
                     </div>
                     {entry.bullets.length > 0 && (
                       <ul className="cv-bullet-list">
                         {entry.bullets.map((bul, bIdx) => (
                           <li key={bIdx}>
-                            <RichLatexText tokens={bul} />
+                            <StructuredBullet tokens={bul} />
                           </li>
                         ))}
                       </ul>
@@ -234,7 +201,7 @@ export default function CvSections({
                 <div key={idx} className="cv-two-col-row">
                   <div className="cv-col-label number">{entry.label}</div>
                   <div className="cv-col-content cv-entry-body">
-                    <RichLatexText tokens={entry.tokens} />
+                    <StructuredEntry tokens={entry.tokens} />
                   </div>
                 </div>
               ))}
@@ -316,7 +283,7 @@ export default function CvSections({
                       </div>
                     </div>
                     <div className="cv-teaching-desc">
-                      <RichLatexText tokens={entry.tokens} />
+                      <StructuredEntry tokens={entry.tokens} />
                     </div>
                   </div>
                 );
@@ -371,7 +338,7 @@ export default function CvSections({
                     <div key={idx} className="cv-two-col-row cv-compact-row">
                       <div className="cv-col-label number">{entry.label}</div>
                       <div className="cv-col-content cv-entry-body">
-                        <RichLatexText tokens={entry.tokens} />
+                        <StructuredEntry tokens={entry.tokens} />
                       </div>
                     </div>
                   ))}
@@ -387,7 +354,7 @@ export default function CvSections({
                     <div key={idx} className="cv-two-col-row cv-compact-row">
                       <div className="cv-col-label number">{entry.label}</div>
                       <div className="cv-col-content cv-entry-body">
-                        <RichLatexText tokens={entry.tokens} />
+                        <StructuredEntry tokens={entry.tokens} />
                       </div>
                     </div>
                   ))}
@@ -406,7 +373,7 @@ export default function CvSections({
                           <Email size={14} /> {entry.label}
                         </div>
                         <div className="cv-ref-body">
-                          <RichLatexText tokens={entry.tokens} />
+                          <StructuredEntry tokens={entry.tokens} />
                         </div>
                       </Tile>
                     </Col>

@@ -494,6 +494,7 @@ pre {
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: saturate(65%) contrast(1.03);
 }
 
 .hero-identity-text {
@@ -1644,4 +1645,327 @@ em {
 
 .cds--btn--ghost:hover {
   color: var(--cv-accent-hover) !important;
+}
+
+
+/* ============================================================================
+   Profile Page Editorial Rework — Spacious, Uncluttered Single-Column Flow
+   ============================================================================ */
+.profile-editorial {
+  padding: 5.5rem 0 3.5rem;
+}
+
+.profile-header-block {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2.25rem;
+}
+
+.profile-header-block .hero-avatar-frame {
+  width: 112px;
+  height: 112px;
+  border-width: 1.5px;
+}
+
+.profile-title-group {
+  min-width: 0;
+}
+
+.profile-title-group .hero-name {
+  font-size: clamp(2.1rem, 3.8vw, 2.85rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.45rem;
+}
+
+.profile-title-group .hero-subtitle {
+  font-size: 1.12rem;
+  line-height: 1.55;
+  color: var(--cv-text-primary);
+  margin: 0 0 0.3rem;
+  max-width: none;
+}
+
+.profile-title-group .hero-qualification {
+  font-size: 0.96rem;
+  color: var(--cv-text-secondary);
+  margin: 0;
+}
+
+.profile-meta-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 0.75rem;
+  font-size: 0.78rem;
+  color: var(--cv-text-secondary);
+  margin-bottom: 4rem;
+}
+
+.profile-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.profile-meta-sep {
+  color: var(--cv-text-muted);
+  opacity: 0.6;
+}
+
+.profile-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--cv-text-secondary);
+  text-decoration: none;
+  transition: color 130ms ease;
+}
+
+.profile-social-link:hover {
+  color: var(--cv-text-primary);
+}
+
+.profile-narrative-block {
+  margin-bottom: 3.5rem;
+}
+
+.profile-section-label {
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cv-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.profile-prose p {
+  font-family: var(--font-text);
+  font-weight: 300;
+  font-size: 1.18rem;
+  line-height: 1.9;
+  color: var(--cv-text-primary);
+  max-width: 68ch;
+  margin: 0;
+}
+
+.profile-utility-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.profile-text-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  padding: 0.2rem 0;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cv-text-muted);
+  cursor: pointer;
+  transition: color 140ms ease, border-color 140ms ease;
+}
+
+.profile-text-action:hover {
+  color: var(--cv-text-primary);
+  border-bottom-color: var(--cv-text-primary);
+}
+
+@media (max-width: 768px) {
+  .profile-editorial {
+    padding: 3rem 0 2rem;
+  }
+
+  .profile-header-block {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .profile-meta-strip {
+    margin-bottom: 2.75rem;
+  }
+
+  .profile-prose p {
+    font-size: 1.06rem;
+    line-height: 1.8;
+  }
+}
+
+
+/* ============================================================================
+   Multi-Level Typography & Editorial Bullet System
+   ============================================================================ */
+
+/* Level 1: Primary entry title + secondary affiliation/context */
+.cv-entry-hierarchy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cv-level1-line {
+  font-size: 1.04rem;
+  line-height: 1.6;
+  color: var(--cv-text-primary);
+}
+
+.cv-level1-title .cv-strong {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--cv-text-primary);
+}
+
+.cv-level1-sep {
+  margin: 0 0.55rem;
+  color: var(--cv-text-muted);
+  font-weight: 300;
+}
+
+.cv-level1-context {
+  font-size: 0.96rem;
+  color: var(--cv-text-secondary);
+}
+
+/* Level 2: Indented sub-blocks (thesis, lab, supervisor, committee, project abstract) */
+.cv-sublevel-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-left: 0.25rem;
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--cv-border);
+}
+
+.cv-sublevel-paragraph {
+  font-size: 0.96rem;
+  line-height: 1.75;
+  color: var(--cv-text-secondary);
+}
+
+.cv-sublevel-fields-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cv-sublevel-field {
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  gap: 0.85rem;
+  align-items: baseline;
+}
+
+.cv-field-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cv-text-muted);
+}
+
+.cv-field-value {
+  font-family: var(--font-text);
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: var(--cv-text-primary);
+}
+
+/* Level 2 Bullets: Left guide thread + crisp geometric square markers */
+.cv-bullet-list {
+  margin: 1rem 0 0 0.25rem !important;
+  padding-left: 1.35rem !important;
+  border-left: 1px solid var(--cv-border);
+  list-style: none !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem !important;
+}
+
+.cv-bullet-list > li {
+  position: relative;
+  padding-left: 1.15rem !important;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--cv-text-secondary);
+}
+
+.cv-bullet-list > li::before {
+  content: '' !important;
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 5px;
+  height: 5px;
+  background-color: var(--cv-accent);
+  transform: translateY(-50%);
+}
+
+/* Multi-level bullet content: Bold lead label + Level-3 sub-items */
+.cv-bullet-lead {
+  font-weight: 600;
+  color: var(--cv-text-primary);
+}
+
+.cv-bullet-rest {
+  color: var(--cv-text-secondary);
+}
+
+.cv-level3-list {
+  list-style: none;
+  margin: 0.7rem 0 0.65rem 0.2rem;
+  padding-left: 1.15rem;
+  border-left: 1px dashed var(--cv-border-strong);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.cv-level3-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 148px 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding-left: 0 !important;
+  font-size: 0.89rem;
+  line-height: 1.6;
+}
+
+.cv-level3-item::before {
+  display: none !important;
+}
+
+.cv-level3-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cv-text-primary);
+}
+
+.cv-level3-desc {
+  font-family: var(--font-text);
+  color: var(--cv-text-secondary);
+}
+
+.cv-bullet-footnote {
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--cv-text-secondary);
+}
+
+@media (max-width: 768px) {
+  .cv-sublevel-field,
+  .cv-level3-item {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
 }
