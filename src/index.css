@@ -1,8 +1,9 @@
-/* Fonts: Inter for body text, IBM Plex Mono for titles, etiquettes, and numbers */
-@import '@fontsource/inter/400.css';
-@import '@fontsource/inter/500.css';
-@import '@fontsource/inter/600.css';
-@import '@fontsource/inter/700.css';
+/* Fonts: IBM Plex Serif for body text, IBM Plex Mono for titles, etiquettes, and numbers */
+@import '@fontsource/ibm-plex-serif/300.css';
+@import '@fontsource/ibm-plex-serif/400.css';
+@import '@fontsource/ibm-plex-serif/400-italic.css';
+@import '@fontsource/ibm-plex-serif/500.css';
+@import '@fontsource/ibm-plex-serif/600.css';
 @import '@fontsource/ibm-plex-mono/400.css';
 @import '@fontsource/ibm-plex-mono/500.css';
 @import '@fontsource/ibm-plex-mono/600.css';
@@ -19,13 +20,14 @@
    IBM Carbon Design System Tokens + Typography System
    ============================================================================ */
 :root {
-  --font-text: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-text: 'IBM Plex Serif', Georgia, 'Times New Roman', serif;
   --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
 
-  --cds-font-family-sans: var(--font-text);
+  /* Carbon UI controls (buttons, inputs) follow the mono "etiquette" voice */
+  --cds-font-family-sans: var(--font-mono);
   --cds-font-family-mono: var(--font-mono);
 
-  /* Carbon White (default) */
+  /* Carbon White (default) — Discrete Slate/Charcoal monochrome accent */
   --cv-bg: #ffffff;
   --cv-layer: #f4f4f4;
   --cv-layer-hover: #e8e8e8;
@@ -34,9 +36,24 @@
   --cv-text-primary: #161616;
   --cv-text-secondary: #525252;
   --cv-text-muted: #6f6f6f;
-  --cv-accent: #0f62fe;
-  --cv-accent-hover: #0043ce;
-  --cv-green-accent: #0e6027;
+  --cv-accent: #4d5358;
+  --cv-accent-hover: #161616;
+  --cv-accent-solid: #343a3f;
+  --cv-accent-solid-hover: #161616;
+  --cv-accent-on-solid: #ffffff;
+  --cv-green-accent: #4d5358;
+
+  /* Carbon interactive tokens (Discrete Slate) */
+  --cds-button-primary: #343a3f;
+  --cds-button-primary-hover: #161616;
+  --cds-button-primary-active: #161616;
+  --cds-button-tertiary: #4d5358;
+  --cds-button-tertiary-hover: #161616;
+  --cds-interactive: #4d5358;
+  --cds-link-primary: #4d5358;
+  --cds-link-primary-hover: #161616;
+  --cds-focus: #4d5358;
+  --cds-border-interactive: #4d5358;
 }
 
 [data-carbon-theme='g100'] {
@@ -48,9 +65,21 @@
   --cv-text-primary: #f4f4f4;
   --cv-text-secondary: #c6c6c6;
   --cv-text-muted: #8d8d8d;
-  --cv-accent: #78a9ff;
-  --cv-accent-hover: #a6c8ff;
-  --cv-green-accent: #42be65;
+  --cv-accent: #a2a9b0;
+  --cv-accent-hover: #f4f4f4;
+  --cv-accent-solid: #4d5358;
+  --cv-accent-solid-hover: #697077;
+  --cv-accent-on-solid: #ffffff;
+  --cv-green-accent: #a2a9b0;
+
+  --cds-button-primary: #4d5358;
+  --cds-button-primary-hover: #697077;
+  --cds-button-primary-active: #343a3f;
+  --cds-interactive: #a2a9b0;
+  --cds-link-primary: #a2a9b0;
+  --cds-link-primary-hover: #f4f4f4;
+  --cds-focus: #a2a9b0;
+  --cds-border-interactive: #a2a9b0;
 }
 
 html {
@@ -217,10 +246,10 @@ body {
 
 .category-chevron:hover,
 .category-chevron:focus-visible {
-  background-color: var(--cv-accent);
-  border-color: var(--cv-accent);
-  color: #ffffff;
-  box-shadow: 0 8px 22px rgba(15, 98, 254, 0.25);
+  background-color: var(--cv-accent-solid);
+  border-color: var(--cv-accent-solid);
+  color: var(--cv-accent-on-solid);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
   outline: none;
 }
 
@@ -240,7 +269,7 @@ body {
 .category-chevron:focus-visible .category-chevron-icon,
 .category-chevron:focus-visible .category-chevron-num,
 .category-chevron:focus-visible .category-chevron-label {
-  color: #ffffff;
+  color: var(--cv-accent-on-solid);
 }
 
 /* Bottom Prev / Next Pager inside Scroll Pane */
@@ -319,50 +348,51 @@ pre {
 }
 
 /* ============================================================================
-   Discrete Left-Side Navigation Rail
+   Discrete Seamless Left-Side Navigation (no border, same canvas background)
    ============================================================================ */
 .site-left-nav {
-  width: 196px;
+  width: 210px;
   flex-shrink: 0;
   height: 100vh;
   background-color: var(--cv-bg);
-  border-right: 1px solid var(--cv-border);
+  border-right: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2rem 0.75rem 1.25rem;
+  padding: 3rem 0.75rem 1.75rem 1.5rem;
   z-index: 60;
 }
 
 .site-left-nav-list {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.2rem;
 }
 
 .site-left-nav-item {
   display: flex;
   align-items: baseline;
-  gap: 0.45rem;
-  padding: 0.42rem 0.65rem;
+  gap: 0.5rem;
+  padding: 0.4rem 0.65rem;
   font-size: 0.78rem;
   font-weight: 400;
   color: var(--cv-text-muted);
   text-decoration: none;
   border-left: 2px solid transparent;
-  transition: color 140ms ease, background-color 140ms ease, border-color 140ms ease;
+  background-color: transparent;
+  transition: color 140ms ease, border-color 140ms ease, transform 140ms ease;
 }
 
 .site-left-nav-item:hover {
   color: var(--cv-text-primary);
-  background-color: var(--cv-layer);
   text-decoration: none;
+  transform: translateX(2px);
 }
 
 .site-left-nav-item.is-active {
   color: var(--cv-text-primary);
   font-weight: 600;
-  background-color: var(--cv-layer);
+  background-color: transparent;
   border-left-color: var(--cv-accent);
 }
 
@@ -388,7 +418,7 @@ pre {
   align-items: center;
   gap: 0.35rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--cv-border);
+  border-top: none;
 }
 
 .site-nav-util-btn {
@@ -442,22 +472,50 @@ pre {
   font-weight: 500;
 }
 
+.hero-identity-row {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+  margin-bottom: 0.85rem;
+}
+
+.hero-avatar-frame {
+  width: 116px;
+  height: 116px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 2px solid var(--cv-accent);
+  background-color: var(--cv-layer);
+  overflow: hidden;
+}
+
+.hero-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-identity-text {
+  min-width: 0;
+}
+
 .hero-name {
-  font-size: clamp(2.1rem, 4.4vw, 3.25rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.15;
   color: var(--cv-text-primary);
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.5rem;
 }
 
 .hero-subtitle {
   font-family: var(--font-text);
-  font-size: 1.125rem;
+  font-size: 1.05rem;
   font-weight: 500;
   color: var(--cv-text-primary);
-  margin: 0 0 0.45rem;
-  max-width: 62ch;
+  margin: 0;
+  max-width: 56ch;
 }
 
 .hero-qualification {
@@ -640,8 +698,17 @@ pre {
   color: var(--cv-text-primary);
 }
 
-.cv-em {
+.cv-em,
+em {
   font-style: italic;
+  color: var(--cv-text-secondary);
+}
+
+:not(pre) > code,
+:not(pre) > kbd,
+:not(pre) > samp {
+  color: var(--cv-text-primary);
+  background-color: var(--cv-layer);
 }
 
 .cv-link {
@@ -994,12 +1061,12 @@ pre {
 }
 
 /* ============================================================================
-   Footer
+   Footer — Seamless surface
    ============================================================================ */
 .cv-footer {
-  border-top: 1px solid var(--cv-border);
-  background-color: var(--cv-layer);
-  padding: 2rem 0;
+  border-top: none;
+  background-color: var(--cv-bg);
+  padding: 2rem 0 2.5rem;
 }
 
 .cv-footer-inner {
@@ -1038,12 +1105,8 @@ pre {
     padding: 0.5rem 0.65rem;
   }
 
-  .category-chevron-left {
-    left: 12px;
-  }
-
   .category-chevron-right {
-    right: 12px;
+    right: 14px;
   }
 
   .category-chevron-label {
@@ -1051,8 +1114,8 @@ pre {
   }
 
   .cv-container {
-    padding-left: 8.75rem;
-    padding-right: 8.75rem;
+    padding-left: 1.5rem;
+    padding-right: 9.25rem;
   }
 }
 
@@ -1140,6 +1203,17 @@ pre {
     padding: 2.5rem 0 2rem;
   }
 
+  .hero-identity-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .hero-avatar-frame {
+    width: 96px;
+    height: 96px;
+  }
+
   .cv-section {
     padding: 2.25rem 0;
   }
@@ -1190,4 +1264,384 @@ pre {
     background: #ffffff !important;
     border-color: #cccccc !important;
   }
+}
+
+
+/* ============================================================================
+   ELEGANT EDITORIAL LAYER — no cards, no boxes, no rules.
+   Separation is created only by whitespace and typographic hierarchy.
+   ============================================================================ */
+
+/* Remove every surface, border and shadow from content blocks */
+.cv-carbon-tile,
+.hero-contact-card,
+.hero-kpi-cell,
+.cv-equation-tile,
+.cv-project-tile,
+.cv-skill-tile,
+.cv-ref-tile {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.hero-band,
+.cv-section,
+.cv-list-framed,
+.cv-timeline,
+.cv-pub-row,
+.cv-two-col-row,
+.cv-teaching-row,
+.hero-kpi-grid,
+.hero-socials {
+  border: none !important;
+}
+
+/* Hero: airy, typographic */
+.hero-band {
+  padding: 5rem 0 2rem;
+}
+
+.hero-contact-card {
+  gap: 0.5rem;
+}
+
+.hero-socials {
+  padding-top: 0.35rem;
+  margin-top: 0;
+}
+
+.hero-actions {
+  margin-top: 2.5rem;
+}
+
+.hero-kpi-grid {
+  margin-top: 3.5rem;
+  gap: 2rem;
+}
+
+.hero-kpi-value {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+/* Sections: generous vertical rhythm */
+.cv-section,
+.cv-section-single {
+  padding: 4.5rem 0 3rem;
+}
+
+.cv-more-stack .cv-section + .cv-section {
+  padding-top: 5rem;
+}
+
+.cv-section-header {
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.cv-section-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+}
+
+.cv-section-eyebrow::before {
+  content: '[';
+}
+
+.cv-section-eyebrow::after {
+  content: ']';
+}
+
+.cv-section-title {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.cv-section-footnote {
+  margin-top: 0.75rem;
+  max-width: 60ch;
+}
+
+/* Entries: spacing instead of dividers */
+.cv-pub-row,
+.cv-two-col-row,
+.cv-teaching-row {
+  padding: 0;
+  margin-bottom: 2.5rem;
+}
+
+.cv-compact-row {
+  padding: 0;
+  margin-bottom: 1.75rem;
+}
+
+.cv-pub-row:last-child,
+.cv-two-col-row:last-child,
+.cv-teaching-row:last-child {
+  margin-bottom: 0;
+}
+
+.cv-col-label,
+.cv-pub-index {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--cv-text-muted);
+}
+
+.cv-entry-head,
+.cv-entry-body,
+.cv-pub-citation,
+.cv-teaching-desc {
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.cv-entry-head .cv-strong,
+.cv-entry-body > .cv-strong:first-child {
+  display: inline;
+  font-size: 1.04rem;
+}
+
+.cv-bullet-list {
+  margin-top: 0.9rem;
+  padding-left: 0;
+  list-style: none;
+  gap: 0.55rem;
+}
+
+.cv-bullet-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  line-height: 1.7;
+}
+
+.cv-bullet-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--cv-text-muted);
+}
+
+/* Profile prose & equation */
+.cv-prose-lead p {
+  font-size: 1.12rem;
+  line-height: 1.85;
+  max-width: 62ch;
+}
+
+.cv-equation-tile {
+  padding-top: 0.5rem !important;
+}
+
+/* Projects: stacked editorial blocks */
+.cv-project-tile + .cv-project-tile,
+.row > [class*='col'] + [class*='col'] > .cv-project-tile {
+  margin-top: 1.5rem;
+}
+
+.cv-project-meta {
+  margin-bottom: 1.1rem;
+}
+
+/* Skills & references: label over text, spacing only */
+.cv-skill-tile,
+.cv-ref-tile {
+  margin-bottom: 1.5rem;
+}
+
+.cv-skill-label,
+.cv-ref-role {
+  margin-bottom: 0.4rem;
+}
+
+.cv-skill-body,
+.cv-ref-body {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Talks filter: quiet text links instead of chips */
+.cv-filter-bar {
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.cv-filter-chip {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  padding: 0.15rem 0;
+  color: var(--cv-text-muted);
+}
+
+.cv-filter-chip:hover {
+  background: transparent;
+  color: var(--cv-text-primary);
+}
+
+.cv-filter-chip.is-active {
+  background: transparent;
+  color: var(--cv-text-primary);
+  border-bottom-color: var(--cv-accent);
+}
+
+/* Teaching: thin hairline bar is kept as a data mark, not a separator */
+.cv-hours-bar-track {
+  height: 2px;
+  max-width: 140px;
+}
+
+/* Tags become discreet mono labels */
+.cv-main .cds--tag,
+.cv-category-page .cds--tag {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  min-height: auto !important;
+  margin: 0 !important;
+  color: var(--cv-text-muted) !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cv-pub-metrics {
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.hero-tags {
+  gap: 1.25rem;
+}
+
+/* Footer: just whitespace */
+.cv-footer {
+  padding: 4rem 0 3rem;
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+  .hero-band {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .cv-section,
+  .cv-section-single {
+    padding: 3rem 0 2rem;
+  }
+
+  .cv-section-header {
+    margin-bottom: 2rem;
+  }
+
+  .cv-pub-row,
+  .cv-two-col-row,
+  .cv-teaching-row {
+    margin-bottom: 2rem;
+  }
+
+  .hero-kpi-grid {
+    gap: 1.5rem;
+  }
+}
+
+
+/* ============================================================================
+   Typography tuning for IBM Plex Serif body text
+   ============================================================================ */
+body {
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  text-rendering: optimizeLegibility;
+}
+
+.cv-prose-lead p {
+  font-weight: 300;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.cv-entry-head,
+.cv-entry-body,
+.cv-pub-citation,
+.cv-teaching-desc,
+.cv-skill-body,
+.cv-ref-body,
+.cv-bullet-list li,
+.hero-subtitle,
+.hero-qualification {
+  font-family: var(--font-text);
+}
+
+.hero-subtitle {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.cv-strong {
+  font-weight: 600;
+}
+
+.cv-em,
+em {
+  font-style: italic;
+  color: var(--cv-text-secondary);
+}
+
+:not(pre) > code,
+:not(pre) > kbd,
+:not(pre) > samp {
+  color: var(--cv-text-primary);
+  background-color: var(--cv-layer);
+}
+
+/* Carbon buttons & inputs in the mono UI voice + IBM Blue accent */
+.cds--btn,
+.cds--text-input,
+.cds--text-area,
+.cds--tabs__nav-item {
+  font-family: var(--font-mono) !important;
+  letter-spacing: 0.01em;
+}
+
+.cds--btn--primary {
+  background-color: var(--cv-accent-solid) !important;
+  color: var(--cv-accent-on-solid) !important;
+}
+
+.cds--btn--primary:hover {
+  background-color: var(--cv-accent-solid-hover) !important;
+  color: var(--cv-accent-on-solid) !important;
+}
+
+.cds--btn--primary svg {
+  fill: var(--cv-accent-on-solid) !important;
+}
+
+.cds--btn--tertiary {
+  border-color: var(--cv-accent) !important;
+  color: var(--cv-accent) !important;
+}
+
+.cds--btn--tertiary:hover {
+  background-color: var(--cv-accent-solid) !important;
+  border-color: var(--cv-accent-solid) !important;
+  color: var(--cv-accent-on-solid) !important;
+}
+
+.cds--btn--tertiary:hover svg {
+  fill: var(--cv-accent-on-solid) !important;
+}
+
+.cds--btn--ghost {
+  color: var(--cv-accent) !important;
+}
+
+.cds--btn--ghost:hover {
+  color: var(--cv-accent-hover) !important;
 }

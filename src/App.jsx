@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Theme, Button } from '@carbon/react';
-import { ChevronLeft, ChevronRight, DocumentExport } from '@carbon/icons-react';
+import { ChevronRight, DocumentExport } from '@carbon/icons-react';
 import { animate } from 'animejs';
 import enTexRaw from '../main_master_EN.tex?raw';
 import frTexRaw from '../main_master_FR.tex?raw';
@@ -269,25 +269,9 @@ export default function App() {
           onSelectCategory={handleSelectCategory}
         />
 
-        {/* Right Main Stage Wrapper (isolates swipe cards & scroll pane from left nav) */}
+        {/* Right Main Stage Wrapper */}
         <div className="category-stage-wrapper">
-          {/* Left / Right Rectangular Category Swipe Cards */}
-          <button
-            type="button"
-            className="category-chevron category-chevron-left no-print"
-            onClick={goPrev}
-            aria-label={`${lang === 'fr' ? 'Catégorie précédente' : 'Previous category'}: ${prevLabel}`}
-            title={`← [${prevCategory.index}] ${prevLabel}`}
-          >
-            <span className="category-chevron-icon" aria-hidden="true">
-              <ChevronLeft size={18} />
-            </span>
-            <span className="category-chevron-meta">
-              <span className="category-chevron-num number">[{prevCategory.index}]</span>
-              <span className="category-chevron-label etiquette">{prevLabel}</span>
-            </span>
-          </button>
-
+          {/* Right Rectangular Category Swipe Card */}
           <button
             type="button"
             className="category-chevron category-chevron-right no-print"
@@ -324,41 +308,9 @@ export default function App() {
               />
             </main>
 
-            {/* Clean Prev / Index / Next Bar + Minimal Footer */}
+            {/* Minimal Seamless Footer */}
             <footer className="cv-footer">
               <Container className="cv-container">
-                <div className="cv-pager-bar no-print">
-                  <button
-                    type="button"
-                    className="cv-pager-btn etiquette"
-                    onClick={goPrev}
-                  >
-                    <ChevronLeft size={16} />
-                    <span>
-                      [{prevCategory.index}] {prevLabel}
-                    </span>
-                  </button>
-
-                  <span className="cv-pager-counter number">
-                    {String(currentIndex + 1).padStart(2, '0')} /{' '}
-                    {String(CATEGORIES.length).padStart(2, '0')}
-                    <span className="cv-pager-hint etiquette">
-                      {lang === 'fr' ? ' · glisser ou ← →' : ' · swipe or ← →'}
-                    </span>
-                  </span>
-
-                  <button
-                    type="button"
-                    className="cv-pager-btn etiquette"
-                    onClick={goNext}
-                  >
-                    <span>
-                      [{nextCategory.index}] {nextLabel}
-                    </span>
-                    <ChevronRight size={16} />
-                  </button>
-                </div>
-
                 <div className="cv-footer-inner">
                   <div>
                     <div className="cv-footer-name etiquette">

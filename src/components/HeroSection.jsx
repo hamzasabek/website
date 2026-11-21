@@ -12,6 +12,7 @@ import {
 } from '@carbon/icons-react';
 import { animate, stagger } from 'animejs';
 import UIkit from 'uikit';
+import profileImg from '../assets/profile.jpg';
 
 const UI_COPY = {
   en: {
@@ -91,15 +92,30 @@ export default function HeroSection({ data, lang, onOpenLatexModal }) {
 
         <Row className="align-items-end g-4">
           <Col lg={8}>
-            <h1 className="hero-stagger hero-name">{header.name}</h1>
-            <p className="hero-stagger hero-subtitle">{header.subtitle}</p>
+            <div className="hero-stagger hero-identity-row">
+              <div className="hero-avatar-frame">
+                <img
+                  src={profileImg}
+                  alt={header.name}
+                  className="hero-avatar-img"
+                  width="116"
+                  height="116"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div className="hero-identity-text">
+                <h1 className="hero-name">{header.name}</h1>
+                <p className="hero-subtitle">{header.subtitle}</p>
+              </div>
+            </div>
             <p className="hero-stagger hero-qualification">{header.qualification}</p>
 
             <div className="hero-stagger hero-tags">
-              <Tag type="blue" size="sm" className="etiquette">
+              <Tag type="cool-gray" size="sm" className="etiquette">
                 CNU 74 · 69 · 16
               </Tag>
-              <Tag type="teal" size="sm" className="etiquette">
+              <Tag type="cool-gray" size="sm" className="etiquette">
                 LICAE · Paris Nanterre
               </Tag>
               <Tag type="cool-gray" size="sm" className="etiquette">

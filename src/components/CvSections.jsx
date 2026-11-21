@@ -125,7 +125,7 @@ export default function CvSections({
                   <Tile className="cv-carbon-tile cv-project-tile">
                     <div className="cv-project-meta">
                       <Tag
-                        type={idx === 0 ? 'teal' : 'blue'}
+                        type="cool-gray"
                         size="sm"
                         className="etiquette"
                       >
